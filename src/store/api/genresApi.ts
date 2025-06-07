@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { GenresResponse } from "../types";
-import { GENRE_PATH } from "../../constants";
+import { GENRE_PATH, API_BASE_URL } from "../../constants";
 
 export const genresApi = createApi({
   reducerPath: "genresApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API_BASE_URL,
+    baseUrl: API_BASE_URL,
     prepareHeaders: (headers) => {
       headers.set("Content-Type", "application/json");
       return headers;
